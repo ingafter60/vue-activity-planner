@@ -46,7 +46,7 @@
                      <div class="field">
                         <lable class="label">Title</lable>
                         <div class="control">
-                           <input type="text" class="input" placeholder="Read a Book">
+                           <input v-model="newActivity.title" class="input" placeholder="Read a Book">
                         </div>
                      </div>
                      <div class="field" is-grouped>
@@ -92,6 +92,9 @@
             message: 'Hello Vue!',
             titleMessage: 'Title Message Vue!!!!',
             isTextDisplayed: true,
+            newActivity: {
+               title: ''
+            },
             items: {
                1:{name:'Filip'},
                2:{name: 'Nyoman'},
