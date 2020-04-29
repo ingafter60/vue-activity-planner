@@ -34,7 +34,9 @@
          </div>
       </nav>
       <section class="container">
-         <h1 v-bind:title="titleMessage">{{message}}</h1>
+         <div v-if="isTextDisplayed">
+            <h1 v-bind:title="titleMessage">{{message}}</h1>
+         </div>
          <div class="columns">
             <div class="column is-3">
                <a class="button is-primary is-block is-alt is-large" href="#">New Activity</a>
@@ -92,6 +94,7 @@
          data: {
             message: 'Hello Vue!',
             titleMessage: 'Title Message Vue!!!!',
+            isTextDisplayed: true,
                user: {
                   name: 'Filip Jerga',
                   id: '-Ajjdffkjlkdjfasl;'
