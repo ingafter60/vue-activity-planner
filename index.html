@@ -34,26 +34,33 @@
          </div>
       </nav>
       <section class="container">
-         <!-- <div class="example-wrapper">
-            <div v-if="isTextDisplayed">
-               <h1 v-bind:title="titleMessage">{{message}}</h1>
-            </div>
-            <div v-else>
-               Hidden Message
-            </div>
-            <div v-for="item in items">
-               {{item.name}}
-            </div>
-            <button @click="toggleTextDisplay">Hide Message</button>
-         </div> -->
          <div class="columns">
             <div class="column is-3">
-               <a class="button is-primary is-block is-alt is-large" href="#">New Activity</a>
+               <a
+                  @click="isFormDisplayed = !isFormDisplayed"
+                  class="button is-link is-block is-alt" href="#">New Activity</a>
+               <div class="create-form">
+                  <!-- <h2>Create Activity</h2> -->
+                  <!-- form -->
+                  <form v-if="isFormDisplayed">
+                     <div class="field">
+                        <lable class="label">Title</lable>
+                        <div class="control">
+                           <input type="text" class="input" placeholder="Read a Book">
+                        </div>
+                     </div>
+                     <div class="field" is-grouped>
+                        <div class="control">
+                           <button class="button is-link">Create Activity</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
             </div>
             <div class="column is-9">
                <div class="box content">
-                  <article class="post" v-for="goal in goals">
-                     <h4>{{goal.title}}</h4>
+                  <article class="post" v-for="activity in activities">
+                     <h4>{{activity.title}}</h4>
                      <div class="media">
                         <div class="media-left">
                            <p class="image is-32x32">
@@ -63,7 +70,7 @@
                         <div class="media-content">
                            <div class="content">
                               <p>
-                                 <a href="#">Filip Jerga</a> update {{goal.updatedAt}} minutes ago &nbsp;
+                                 <a href="#">Filip Jerga</a> update {{activity.updatedAt}} minutes ago &nbsp;
                               </p>
                            </div>
                         </div>
@@ -72,26 +79,6 @@
                         </div>
                      </div>
                   </article>
-                  <!-- <article class="post">
-                     <h4>Learn Vue.js</h4>
-                     <div class="media">
-                        <div class="media-left">
-                           <p class="image is-32x32">
-                              <img src="./images/user1.jpg">
-                           </p>
-                        </div>
-                        <div class="media-content">
-                           <div class="content">
-                              <p>
-                                 <a href="#">I Nyoman Gurnitha</a> update 04 minutes ago &nbsp;
-                              </p>
-                           </div>
-                        </div>
-                        <div class="media-right">
-                           <span class="has-text-grey-light">Progress Bar Here</span>
-                        </div>
-                     </div>
-                  </article> -->
                </div>
             </div>
          </div>
@@ -101,6 +88,7 @@
       var app = new Vue({
          el: '#vueGoalApp',
          data: {
+            isFormDisplayed: false,
             message: 'Hello Vue!',
             titleMessage: 'Title Message Vue!!!!',
             isTextDisplayed: true,
@@ -113,7 +101,7 @@
                   name: 'Filip Jerga',
                   id: '-Ajjdffkjlkdjfasl;'
                },
-               goals: {
+               activities: {
                   '11111111111':{
                      title: 'Learn Vue.js',
                      notes: 'Start today and it was not good',
