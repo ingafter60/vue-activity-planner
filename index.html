@@ -40,7 +40,7 @@
          <div v-else>
             Hidden Message
          </div>
-         <button v-on:click="isTextDisplayed = false ">Hide Message</button>
+         <button v-on:click="isTextDisplayed = !isTextDisplayed ">Hide Message</button>
          <div class="columns">
             <div class="column is-3">
                <a class="button is-primary is-block is-alt is-large" href="#">New Activity</a>
@@ -103,20 +103,25 @@
                   name: 'Filip Jerga',
                   id: '-Ajjdffkjlkdjfasl;'
                },
-                  goals: {
-                     '11111111111':{
-                        title: 'Learn Vue.js',
-                        notes: 'Start today and it was not good',
-                        progress: 0,
-                        category: '1546969049',
-                        createdAt: 146969144391,
-                        updatedAt: 146969144391
-                     }
-                  },
-                  categories: {
-                     '1546969049': {text: 'books'},
-                     '1546969050': {text: 'movies'},
+               goals: {
+                  '11111111111':{
+                     title: 'Learn Vue.js',
+                     notes: 'Start today and it was not good',
+                     progress: 0,
+                     category: '1546969049',
+                     createdAt: 146969144391,
+                     updatedAt: 146969144391
                   }
+               },
+               categories: {
+                  '1546969049': {text: 'books'},
+                  '1546969050': {text: 'movies'},
+               }
+         },
+         methods: {
+            yell: function(){
+               alert('AAAAAAAAAAA haaaaaaa!!!!')
+            }
          }
       })
    </script>
