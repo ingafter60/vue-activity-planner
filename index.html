@@ -34,7 +34,7 @@
          </div>
       </nav>
       <section class="container">
-         <div class="example-wrapper">
+         <!-- <div class="example-wrapper">
             <div v-if="isTextDisplayed">
                <h1 v-bind:title="titleMessage">{{message}}</h1>
             </div>
@@ -44,17 +44,16 @@
             <div v-for="item in items">
                {{item.name}}
             </div>
-            <!-- <button v-on:click="toggleTextDisplay">Hide Message</button> -->
             <button @click="toggleTextDisplay">Hide Message</button>
-         </div>
+         </div> -->
          <div class="columns">
             <div class="column is-3">
                <a class="button is-primary is-block is-alt is-large" href="#">New Activity</a>
             </div>
             <div class="column is-9">
                <div class="box content">
-                  <article class="post">
-                     <h4>Reading Harry Potter</h4>
+                  <article class="post" v-for="goal in goals">
+                     <h4>{{goal.title}}</h4>
                      <div class="media">
                         <div class="media-left">
                            <p class="image is-32x32">
@@ -64,7 +63,7 @@
                         <div class="media-content">
                            <div class="content">
                               <p>
-                                 <a href="#">Filip Jerga</a> update 34 minutes ago &nbsp;
+                                 <a href="#">Filip Jerga</a> update {{goal.updatedAt}} minutes ago &nbsp;
                               </p>
                            </div>
                         </div>
@@ -73,7 +72,7 @@
                         </div>
                      </div>
                   </article>
-                  <article class="post">
+                  <!-- <article class="post">
                      <h4>Learn Vue.js</h4>
                      <div class="media">
                         <div class="media-left">
@@ -92,7 +91,7 @@
                            <span class="has-text-grey-light">Progress Bar Here</span>
                         </div>
                      </div>
-                  </article>
+                  </article> -->
                </div>
             </div>
          </div>
@@ -122,6 +121,14 @@
                      category: '1546969049',
                      createdAt: 146969144391,
                      updatedAt: 146969144391
+                  },
+                  '11111111112':{
+                     title: 'Learn React.js',
+                     notes: 'Start tomorrow at noon',
+                     progress: 0,
+                     category: '1546969049',
+                     createdAt: 146969144399,
+                     updatedAt: 146969144399
                   }
                },
                categories: {
