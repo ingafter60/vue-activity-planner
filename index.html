@@ -51,6 +51,14 @@
                            <input v-model="newActivity.title" class="input" placeholder="Read a Book">
                         </div>
                      </div>
+                     <div class="field">
+                        <label class="label">Notes</label>
+                        <div class="control">
+                           <textarea v-model="newActivity.notes"
+                                     class="textarea"
+                                     placeholder="Write some notes .."></textarea>
+                        </div>
+                     </div>
                      <div class="field" is-grouped>
                         <div class="control">
                            <button class="button is-link">Create Activity</button>
@@ -82,7 +90,8 @@
             titleMessage: 'Title Message Vue!!!!',
             isTextDisplayed: true,
             newActivity: {
-               title: ''
+               title: '',
+               notes: ''
             },
             items: {
                1:{name:'Filip'},
@@ -126,5 +135,7 @@
          }
       })
    </script>
+
+
 </body>
 </html>
