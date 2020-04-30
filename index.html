@@ -61,7 +61,9 @@
                      </div>
                      <div class="field" is-grouped>
                         <div class="control">
-                           <button class="button is-link">Create Activity</button>
+                           <button @click="createActivity"
+                                   class="button is-link">Create Activity</button>
+
                            <button style="background-color: orange;"
                               class="button is-link"
                               @click="toggleFormDisplay">Cancel</button>
@@ -131,6 +133,9 @@
             },
             toggleFormDisplay(){
                this.isFormDisplayed = !this.isFormDisplayed
+            },
+            createActivity(){
+               console.log(this.newActivity)
             }
          }
       })
