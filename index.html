@@ -38,10 +38,11 @@
          <div class="columns">
             <div class="column is-3">
                <a
-                  @click="isFormDisplayed = !isFormDisplayed"
+                  v-if="!isFormDisplayed"
+                  @click="toggleFormDisplay"
                   class="button is-link is-block is-alt" href="#">New Activity</a>
+
                <div class="create-form">
-                  <!-- <h2>Create Activity</h2> -->
                   <!-- form -->
                   <form v-if="isFormDisplayed">
                      <div class="field">
@@ -53,6 +54,9 @@
                      <div class="field" is-grouped>
                         <div class="control">
                            <button class="button is-link">Create Activity</button>
+                           <button style="background-color: orange;"
+                              class="button is-link"
+                              @click="toggleFormDisplay">Cancel</button>
                         </div>
                      </div>
                   </form>
@@ -115,6 +119,9 @@
          methods: {
             toggleTextDisplay: function(){
                this.isTextDisplayed = !this.isTextDisplayed
+            },
+            toggleFormDisplay(){
+               this.isFormDisplayed = !this.isFormDisplayed
             }
          }
       })
